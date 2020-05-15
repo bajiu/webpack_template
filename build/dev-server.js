@@ -3,6 +3,7 @@ const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const c = require('child_process');
 const config = require('./webpack.dev.js');
 
 const complier = webpack(config);
@@ -29,4 +30,5 @@ app.use(express.static(DIST_DIR));
 
 app.listen(8080, () => {
     console.log('成功启动：localhost:' + 8080);
+    c.exec('open http://localhost:8080/');
 });
