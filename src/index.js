@@ -1,3 +1,4 @@
 import('./index.less');
-import a from "./main/demo.js"
-console.log(a);
+import {main} from "./main/demo.ts";
+
+console.log(main);

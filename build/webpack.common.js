@@ -9,12 +9,17 @@ const commonConfig = {
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/, // 排除node_modules中的代码
-                use: [{
-                    loader: 'babel-loader'
-                }],
+                test: /\.(tsx?|js)$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
             },
+            // {
+            //     test: /\.js$/,
+            //     exclude: /node_modules/, // 排除node_modules中的代码
+            //     use: [{
+            //         loader: 'babel-loader'
+            //     }],
+            // },
             {
                 test: /\.(png|jpg|gif|jpeg)$/,
                 use: {
